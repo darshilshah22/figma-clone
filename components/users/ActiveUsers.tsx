@@ -22,7 +22,7 @@ const ActiveUsers = () => {
    */
   const currentUser = useSelf();
 
-  console.log(currentUser);
+  // console.log(currentUser);
 
   // memoize the result of this function so that it doesn't change on every render but only when there are new users joining the room
   const memoizedUsers = useMemo(() => {

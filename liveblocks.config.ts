@@ -1,4 +1,5 @@
-import { createClient } from "@liveblocks/client";
+import { CanvasObjectModified } from './types/type';
+import { LiveMap, createClient } from "@liveblocks/client";
 import { createRoomContext, createLiveblocksContext } from "@liveblocks/react";
   
 const client = createClient({
@@ -61,6 +62,7 @@ type Presence = {
 type Storage = {
   // author: LiveObject<{ firstName: string, lastName: string }>,
   // ...
+  canvasObjects: LiveMap<string, any>;
 };
 
 // Optionally, UserMeta represents static/readonly metadata on each user, as
@@ -81,6 +83,7 @@ type RoomEvent = {
 // Optionally, when using Comments, ThreadMetadata represents metadata on
 // each thread. Can only contain booleans, strings, and numbers.
 export type ThreadMetadata = {
+  zIndex: number;
   // resolved: boolean;
   // quote: string;
   // time: number;
